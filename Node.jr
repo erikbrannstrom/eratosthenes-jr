@@ -1,0 +1,40 @@
+import edu.ucdavis.jr.*;
+
+public class Node {
+    private Node next;
+    private cap void(int) master;
+    private boolean running;
+    
+    public op void number(int num);
+    public op void terminate();
+    
+    public Node(cap void(int) master) {
+        this.master = master;
+        this.running = true;
+    }
+    
+    public process loop {
+        int prime;
+        receive this.number(prime);
+        send this.master(prime);
+        while(this.running) {
+            inni void this.number(int num) st this.terminate.length() == 0 {
+                if(num % prime != 0) {
+                    send this.next().number(num);
+                }
+            }
+            [] void this.terminate() {
+                if(this.next != null)
+                    send this.next().terminate();
+                running = false;
+            }
+        }
+    }
+    
+    public Node next() {
+        if(this.next == null) {
+            this.next = new Node(this.master);
+        }
+        return this.next;
+    }
+}

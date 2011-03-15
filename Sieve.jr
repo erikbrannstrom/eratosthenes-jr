@@ -1,0 +1,49 @@
+import edu.ucdavis.jr.*;
+import java.util.*;
+
+public class Sieve {
+    private int n;
+    private Node first;
+    private op void prime(int num);
+    private List<Integer> primes;
+    private long startTime, endTime;
+    
+    public Sieve(int n) {
+        this.n = n;
+        this.primes = new LinkedList<Integer>();
+        this.first = new Node(this.prime);
+        this.startTime = System.currentTimeMillis();
+    }
+    
+    public process run {
+        boolean running = true;
+        int counter = 2;
+        while(running) {
+            inni void this.prime(int p) {
+                this.primes.add(p);
+                if(this.primes.size() == this.n) {
+                    send this.first.terminate();
+                    running = false;
+                }
+            }
+            [] else {
+                send this.first.number(counter);
+                counter++;
+            }
+        }
+        this.endTime = System.currentTimeMillis();
+        System.out.println("Finished searching for primes.");
+        System.out.println(this.primes);
+        System.out.println("Search took " + (endTime-startTime) + " ms.");
+    }
+    
+    public static void main(String[] args) {
+        if(args.length == 0) {
+            System.out.println("Missing argument for number of prime numbers! usage: jr Sieve n");
+            System.exit(-1);
+        }
+        System.out.println("Search for first " + args[0] + " prime number(s).");
+        new Sieve(Integer.parseInt(args[0]));
+    }
+    
+}
